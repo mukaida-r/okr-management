@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" viewBox="0 0 31 31">
-  <g id="グループ_1" data-name="グループ 1" transform="translate(-631 1997)">
-      <g id="楕円形_2" data-name="楕円形 2" transform="translate(631 -1997)" stroke="#000" stroke-width="1">
-        <circle cx="15.5" cy="15.5" r="15.5" stroke="none"/>
-        <circle cx="15.5" cy="15.5" r="15" fill="none"/>
-      </g>
-    <text id="O" transform="translate(638 -1974)" fill="#fff" font-size="21" font-family="HiraKakuProN-W3, Hiragino Kaku Gothic ProN"><tspan x="0" y="0">O</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="46.633" height="41.627" viewBox="0 0 46.633 41.627">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.496" y1="0.014" x2="0.477" y2="0.999" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#86ed8e"/>
+      <stop offset="1" stop-color="#52d15e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.496" y1="1" x2="0.492" y2="0.018" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#86ed8e"/>
+      <stop offset="0.023" stop-color="#85ec8d"/>
+      <stop offset="1" stop-color="#52d15e"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.522" y1="0.993" x2="0.474" y2="0.001" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="グループ_2" data-name="グループ 2" transform="translate(-26.79 563.718)">
+    <rect id="長方形_4" data-name="長方形 4" width="15" height="18" rx="5" transform="translate(50.088 -534.818) rotate(-45)" opacity="0.997" fill="url(#linear-gradient)"/>
+    <path id="パス_1" data-name="パス 1" d="M5,0h5c2.761,0,5,1.679,5,3.75v10.5C15,16.321,12.761,18,10,18H5c-2.761,0-5-1.679-5-3.75V3.75C0,1.679,2.239,0,5,0Z" transform="translate(42.763 -563.718)" opacity="0.997" fill="url(#linear-gradient-2)"/>
+    <path id="パス_2" data-name="パス 2" d="M5,0h5a4.77,4.77,0,0,1,5,4.5v9A4.77,4.77,0,0,1,10,18H5a4.77,4.77,0,0,1-5-4.5v-9A4.77,4.77,0,0,1,5,0Z" transform="translate(37.397 -522.433) rotate(-135)" opacity="0.997" fill="url(#linear-gradient-3)"/>
+    <rect id="長方形_5" data-name="長方形 5" width="15" height="18" rx="5" transform="translate(50.088 -534.818) rotate(-45)" opacity="0.997" fill="url(#linear-gradient)"/>
+    <path id="パス_3" data-name="パス 3" d="M5,0h5c2.761,0,5,1.679,5,3.75v10.5C15,16.321,12.761,18,10,18H5c-2.761,0-5-1.679-5-3.75V3.75C0,1.679,2.239,0,5,0Z" transform="translate(42.763 -563.718)" opacity="0.997" fill="url(#linear-gradient-2)"/>
+    <path id="パス_4" data-name="パス 4" d="M5,0h5a4.77,4.77,0,0,1,5,4.5v9A4.77,4.77,0,0,1,10,18H5a4.77,4.77,0,0,1-5-4.5v-9A4.77,4.77,0,0,1,5,0Z" transform="translate(37.397 -522.433) rotate(-135)" opacity="0.997" fill="url(#linear-gradient-3)"/>
   </g>
 </svg>
