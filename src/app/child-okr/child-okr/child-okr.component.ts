@@ -49,7 +49,7 @@ export class ChildOkrComponent implements OnInit {
     private datepipe: DatePipe,
     private authService: AuthService,
     private tutorialService: TutorialService
-  ) { }
+  ) {}
 
   ngOnInit() {
     combineLatest([
@@ -219,7 +219,6 @@ export class ChildOkrComponent implements OnInit {
     this.row.valueChanges
       .pipe(debounceTime(500))
       .subscribe((childOkrKeyResult) => {
-        console.log(childOkrKeyResult);
         this.updateChildOkrKeyResult({
           childOkrObjectiveId,
           childOkrKeyResultId: childOkrKeyResult.childOkrKeyResultId,
@@ -235,8 +234,6 @@ export class ChildOkrComponent implements OnInit {
     row: ChildOkrKeyResult;
     rowLength: number;
   }) {
-    console.log("fa");
-
     this.childOkrKeyResults$.subscribe((childOkrKeyResults) => {
       let average = 0;
       const childOkrPercentages = childOkrKeyResults.filter(
@@ -283,18 +280,13 @@ export class ChildOkrComponent implements OnInit {
       result = 0;
     }
 
-    console.log(result);
-
     this.row = this.fb.group({
       percentage: result,
     });
 
-    this.row.setValue
+    this.row.setValue;
 
-    // this.rows[params.childOkrObjectiveId].push(this.row);
     this.fa = result;
-    console.log(this.row.setValue);
-
 
     const childOkrKeyResult: Omit<ChildOkrKeyResult, 'lastUpdated'> = {
       childOkrId: this.childOkrId,
