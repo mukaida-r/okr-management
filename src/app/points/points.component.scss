@@ -1,0 +1,90 @@
+@import 'mixins';
+
+.points {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  background-color: #f6f8f9;
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  &__container {
+    max-width: 1312px;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    width: calc(100% - 128px);
+    margin: 0 auto;
+    @include sm {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__colmin {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  &__header {
+    color: #151b26;
+    font-weight: 400;
+    font-size: 31px;
+    margin: 0 0 16px;
+    @include md {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    @include sm {
+      font-size: 22px;
+    }
+  }
+}
+
+.points-contents {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  @include md {
+    margin: 32px;
+  }
+  @include sm {
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+    padding: 0 16px;
+    gap: 52px;
+  }
+  &__item {
+    margin: 0 auto;
+    width: 300px;
+    margin-bottom: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include sm {
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  &__icon {
+    margin-bottom: 36px;
+    font-size: 36px;
+  }
+  &__date {
+    margin: 0;
+  }
+  &__title {
+    font-weight: 400;
+    margin-bottom: 16px;
+    font-size: 22px;
+    color: #222b37;
+    @include sm {
+      font-size: 16px;
+    }
+  }
+  &__body {
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+    color: #646f79;
+  }
+}

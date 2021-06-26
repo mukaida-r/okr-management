@@ -1,0 +1,29 @@
+<div class="login-dialog">
+  <div class="main">
+    <img
+      src="/assets/images/wellcome.svg"
+      alt="ダイアログ画像"
+      class="main__img"
+    />
+    <div class="main__content">
+      <ng-container *ngIf="this.authService.user$ | async as user">
+        <h1 class="main__title">
+          {{ user?.name }}さん、<br />
+          OKRへようこそ！
+        </h1>
+      </ng-container>
+      <p>まずは、新規プロジェクトを作成しましょう！</p>
+    </div>
+  </div>
+
+  <div class="action">
+    <a mat-button (click)="closeDialog()" class="action__close">閉じる</a>
+    <a
+      mat-button
+      (click)="createParentOkr()"
+      class="action__transition-childOkr"
+    >
+      プロジェクトを作成する
+    </a>
+  </div>
+</div>

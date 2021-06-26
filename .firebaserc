@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "okr-app-de4fa",
+    "prod": "okr-prod",
+    "dev": "okr-app-de4fa"
+  }
+}

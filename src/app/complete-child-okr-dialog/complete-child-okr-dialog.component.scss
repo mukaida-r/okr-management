@@ -1,0 +1,69 @@
+@import 'variables';
+@import 'mixins';
+
+.complete-okr-dialog {
+  padding: 0 24px;
+  @include sm {
+    margin: 0;
+    padding: 0;
+  }
+  &__cancel {
+    box-shadow: none;
+    @include sm {
+      span {
+        font-style: 12px;
+      }
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+  &__complete-okr-delete {
+    background-color: rgba(2, 5, 211, 0.5);
+    @include sm {
+      font-size: 12px;
+    }
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e8ecee;
+  @include sm {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+
+.content {
+  padding: 24px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #e8ecee;
+  margin: 0;
+  p {
+    margin: 0;
+  }
+  @include sm {
+    font-size: 12px;
+    text-align: start;
+  }
+}
+
+.actions {
+  display: flex;
+  font-size: 14px;
+  padding-top: 24px;
+  justify-content: space-between;
+}
+
+.mat-raised-button {
+  font-size: 12px;
+}

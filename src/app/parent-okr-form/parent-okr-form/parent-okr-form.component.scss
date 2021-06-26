@@ -1,0 +1,118 @@
+@import 'variables';
+@import 'mixins';
+
+.create-parent-okr {
+  max-width: 348px;
+  margin: 0 auto;
+  padding: 32px 0;
+  @include sm {
+    padding: 30px 12px;
+  }
+  &__body {
+    padding: 32px 0;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin: 0 0 32px;
+    @include sm {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+  }
+  &__contents {
+    margin-bottom: 32px;
+    @include sm {
+      padding: 0;
+    }
+    mat-error {
+      font-size: 14px;
+    }
+  }
+  &__form-structure {
+    padding-bottom: 22px;
+  }
+  &__lavel {
+    font-size: 12px;
+    line-height: 18px;
+    display: inline-block;
+    font-weight: 500;
+    color: #6f7782;
+    display: block;
+    margin-bottom: 8px;
+  }
+  &__input {
+    position: relative;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 0 12px;
+    font-weight: 400;
+    border: 2px solid #e8ecee;
+    border-radius: 6px;
+    height: 36px;
+    box-sizing: border-box;
+    @include sm {
+      width: 100%;
+      font-size: 16px;
+      -webkit-appearance: none;
+    }
+  }
+  &__form {
+    position: relative;
+  }
+  &__remove-form {
+    position: absolute;
+    padding: 0;
+    color: rgba(55, 53, 47, 0.4);
+    box-shadow: none;
+    mat-icon {
+      font-size: 14px;
+      line-height: 21px;
+      width: auto;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+    @include sm {
+      font-size: 12px;
+      position: static;
+      padding: 0;
+    }
+  }
+  &__add-form {
+    color: rgba(55, 53, 47, 0.4);
+    font-size: 14px;
+    box-shadow: none;
+    margin-top: -8px;
+    padding: 0;
+    mat-icon {
+      font-size: 14px;
+      line-height: 21px;
+      width: auto;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+    @include sm {
+      font-size: 12px;
+    }
+  }
+  &__button {
+    width: 100%;
+    background-color: rgba(2, 5, 211, 0.5);
+    color: #fff;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.category,
+.objective-form {
+  @include sm {
+    display: none;
+  }
+}

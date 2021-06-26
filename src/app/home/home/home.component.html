@@ -1,0 +1,139 @@
+<div class="home">
+  <div class="home__container">
+    <div class="home__general-next-section">
+      <ng-container *ngIf="this.authService.user$ | async as user">
+        <h1 class="home__welcome-text">{{ user?.name }}さん、OKRへようこそ</h1>
+      </ng-container>
+      <p class="home__description">
+        以下から、プロジェクトや進行中のOKRをご確認ください
+      </p>
+    </div>
+
+    <div class="home__parent-okr-section">
+      <div class="home__parent-okr-header">
+        <p>プロジェクト</p>
+      </div>
+
+      <div class="home__list-item-grid">
+        <ng-container
+          *ngFor="let parentOkr of this.okrService.parentOkrs$ | async"
+        >
+          <div class="home__tile-Structure">
+            <a
+              routerLink="/manage/okr-project"
+              [queryParams]="{ id: parentOkr.parentOkrId }"
+            >
+              <div class="home__list-item-red">
+                <mat-icon>airplanemode_active</mat-icon>
+              </div>
+              <p>{{ parentOkr.parentOkrTarget }}のOKR</p>
+            </a>
+            <div class="child-okr-description-menu">
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu"
+              >
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button
+                  mat-menu-item
+                  routerLink="/manage/okr-project"
+                  [queryParams]="{ id: parentOkr.parentOkrId }"
+                >
+                  <mat-icon>visibility_outline</mat-icon>
+                  <span>詳細を表示</span>
+                </button>
+                <button
+                  mat-menu-item
+                  (click)="deleteParentOkr(parentOkr.parentOkrId)"
+                >
+                  <mat-icon>delete_outline</mat-icon>
+                  <span>OKRを削除</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </ng-container>
+        <div class="home__tile-Structure">
+          <a routerLink="/manage/edit">
+            <div class="home__dashed-list-item">
+              <mat-icon>add</mat-icon>
+            </div>
+            <p>新規プロジェクト</p>
+          </a>
+          <div class="child-okr-description-menu"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home__parent-okr-section">
+      <p class="home__parent-okr-header">進行中のOKR</p>
+      <div class="home__list-item-grid">
+        <ng-container *ngFor="let progressChildOkr of progressChildOkrs">
+          <div class="home__tile-Structure">
+            <a
+              routerLink="/manage/child-okr"
+              [queryParams]="{ id: progressChildOkr.childOkrId }"
+            >
+              <div class="home__list-item-blue">
+                <mat-icon>airplanemode_active</mat-icon>
+              </div>
+              <p>{{ progressChildOkr.childOkrTarget }}のOKR</p>
+            </a>
+            <div class="child-okr-description-menu">
+              <button
+                mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Example icon-button with a menu"
+              >
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button
+                  mat-menu-item
+                  routerLink="/manage/child-okr"
+                  [queryParams]="{ id: progressChildOkr.childOkrId }"
+                >
+                  <mat-icon>visibility_outline</mat-icon>
+                  <span>詳細を表示</span>
+                </button>
+                <button
+                  mat-menu-item
+                  (click)="deleteFindByChildOkr(progressChildOkr.childOkrId)"
+                >
+                  <mat-icon>delete_outline</mat-icon>
+                  <span>OKRを削除</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </ng-container>
+        <div class="home__tile-Structure">
+          <a routerLink="/manage/okr-edit">
+            <div class="home__dashed-list-item">
+              <mat-icon>add</mat-icon>
+            </div>
+            <p>新規タスク</p>
+          </a>
+          <div class="child-okr-description-menu"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home__parent-okr-section">
+      <p class="home__parent-okr-header">使い方</p>
+      <div class="home__list-item-grid">
+        <div class="home__tile-Structure">
+          <a routerLink="/use-service">
+            <div class="home__list-item-yellow">
+              <mat-icon>wb_incandescent</mat-icon>
+            </div>
+            <p>サービスの使い方</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

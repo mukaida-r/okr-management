@@ -1,0 +1,157 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row class="header__inner">
+    <div class="header__left">
+      <div class="header__logo">
+        <a routerLink="/manage/home" class="header__link">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="80"
+            height="26"
+            viewBox="0 0 138.21 44.909"
+          >
+            <defs>
+              <linearGradient
+                id="linear-gradient"
+                x1="0.496"
+                y1="0.014"
+                x2="0.477"
+                y2="0.999"
+                gradientUnits="objectBoundingBox"
+              >
+                <stop offset="0" stop-color="#86ed8e" />
+                <stop offset="1" stop-color="#52d15e" />
+              </linearGradient>
+              <linearGradient
+                id="linear-gradient-2"
+                x1="0.496"
+                y1="1"
+                x2="0.492"
+                y2="0.018"
+                gradientUnits="objectBoundingBox"
+              >
+                <stop offset="0" stop-color="#86ed8e" />
+                <stop offset="0.023" stop-color="#85ec8d" />
+                <stop offset="1" stop-color="#52d15e" />
+              </linearGradient>
+              <linearGradient
+                id="linear-gradient-3"
+                x1="0.522"
+                y1="0.993"
+                x2="0.474"
+                y2="0.001"
+                xlink:href="#linear-gradient"
+              />
+            </defs>
+            <g
+              id="グループ_1"
+              data-name="グループ 1"
+              transform="translate(-28.79 569)"
+            >
+              <rect
+                id="長方形_4"
+                data-name="長方形 4"
+                width="15"
+                height="18"
+                rx="5"
+                transform="translate(52.088 -536.818) rotate(-45)"
+                opacity="0.997"
+                fill="url(#linear-gradient)"
+              />
+              <path
+                id="パス_1"
+                data-name="パス 1"
+                d="M5,0h5c2.761,0,5,1.679,5,3.75v10.5C15,16.321,12.761,18,10,18H5c-2.761,0-5-1.679-5-3.75V3.75C0,1.679,2.239,0,5,0Z"
+                transform="translate(44.763 -565.718)"
+                opacity="0.997"
+                fill="url(#linear-gradient-2)"
+              />
+              <path
+                id="パス_2"
+                data-name="パス 2"
+                d="M5,0h5a4.77,4.77,0,0,1,5,4.5v9A4.77,4.77,0,0,1,10,18H5a4.77,4.77,0,0,1-5-4.5v-9A4.77,4.77,0,0,1,5,0Z"
+                transform="translate(39.397 -524.433) rotate(-135)"
+                opacity="0.997"
+                fill="url(#linear-gradient-3)"
+              />
+              <text
+                id="OKR"
+                transform="translate(86 -534)"
+                fill="#202233"
+                font-size="36"
+                font-family="HelveticaNeue-Medium, Helvetica Neue"
+                font-weight="500"
+                letter-spacing="0.05em"
+              >
+                <tspan x="0" y="0">OKR</tspan>
+              </text>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <ng-container
+      *ngIf="this.authService.user$ | async as user; else notUser"
+      class="header__mypage"
+    >
+      <button
+        mat-mini-fab
+        [matMenuTriggerFor]="userMenu"
+        [style.background-image]="'url(' + user?.avatarURL + ')'"
+        class="header__icon"
+      ></button>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item routerLink="/manage/edit" class="header__menu">
+          <mat-icon>edit</mat-icon>
+          <span>新規プロジェクト</span>
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/manage/okr-edit"
+          class="header__menu"
+        >
+          <mat-icon>edit</mat-icon>
+          <span>新規タスク</span>
+        </button>
+        <button
+          mat-menu-item
+          *ngIf="!(this.authService.user$ | async)"
+          (click)="login()"
+          class="header__menu"
+        >
+          <mat-icon>login</mat-icon>
+          <span>ログイン</span>
+        </button>
+        <button
+          mat-menu-item
+          routerLink="/settings"
+          class="header__settings header__menu"
+        >
+          <mat-icon>settings</mat-icon>
+          <span>設定</span>
+        </button>
+        <button
+          mat-menu-item
+          *ngIf="this.authService.user$ | async"
+          (click)="logout()"
+        >
+          <mat-icon>logout</mat-icon>
+          <span>ログアウト</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+    <ng-template #notUser>
+      <div class="header__right">
+        <a
+          class="header__login"
+          mat-raised-button
+          color="primary"
+          (click)="login()"
+          matTooltip="Googleアカウントで始める"
+        >
+          今すぐ試す
+        </a>
+      </div>
+    </ng-template>
+  </mat-toolbar-row>
+</mat-toolbar>

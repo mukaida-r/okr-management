@@ -1,0 +1,22 @@
+@import 'variables';
+@import 'mixins';
+
+mat-sidenav {
+  top: 64px;
+  width: 230px;
+}
+
+mat-sidenav-content {
+  padding-bottom: 6%;
+  @include sm {
+    padding: 0;
+  }
+}
+
+.wrapper {
+  @include sm {
+    width: 100%;
+    position: relative;
+    height: 100%;
+  }
+}

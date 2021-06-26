@@ -1,0 +1,226 @@
+@import 'mixins';
+
+.home {
+  padding: 12px 0;
+  @include sm {
+    padding: 40px 0 0 0;
+  }
+  &__container {
+    max-width: 840px;
+    margin: 32px auto;
+    @include sm {
+      padding: 0 12px;
+      margin: 0;
+    }
+  }
+  &__general-next-section {
+    text-align: center;
+  }
+  &__welcome-text {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 0 0 16px;
+  }
+  &__description {
+    color: #6f7782;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 auto;
+    max-width: 380px;
+  }
+  &__title {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 56px;
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 1.5px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      right: 50%;
+      transform: translateX(50%);
+      width: 70px;
+      height: 5px;
+      background-color: #757575;
+      border-radius: 2px;
+    }
+    @include sm {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      margin: 0;
+      padding-bottom: 56px;
+    }
+  }
+  &__parent-okr-section {
+    margin-top: 32px;
+  }
+  &__parent-okr-header {
+    position: relative;
+    padding: 8px 0;
+    color: #151b26;
+    font-size: 16px;
+    margin: 0 4%;
+    border-bottom: 2px solid #e8ecee;
+    p {
+      margin: 0;
+    }
+  }
+  &__list-item-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 16px;
+    place-items: center;
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__tile-Structure {
+    position: relative;
+    padding: 16px 0;
+    max-width: 120px;
+    height: 230px;
+    box-sizing: border-box;
+    a {
+      text-decoration: none;
+    }
+    p {
+      margin: 8px 0;
+      font-size: 12px;
+      text-align: center;
+      color: #151b26;
+      font-weight: 500;
+    }
+    &:hover {
+      .child-okr-description-menu {
+        display: inline;
+      }
+    }
+  }
+  &__dashed-list-item {
+    border: dashed 1px #6f7782;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    mat-icon {
+      position: absolute;
+      font-size: 48px;
+      color: #6f7782;
+      top: 30%;
+      right: 50%;
+    }
+  }
+  &__list-item-red {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #fb5779;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    mat-icon {
+      position: absolute;
+      font-size: 48px;
+      color: #fff;
+      top: 30%;
+      right: 50%;
+    }
+  }
+  &__list-item-blue {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(2, 5, 211, 0.5);
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    mat-icon {
+      position: absolute;
+      font-size: 48px;
+      color: #fff;
+      top: 30%;
+      right: 50%;
+    }
+  }
+  &__list-item-yellow {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    background-color: #f2a100;
+    border-radius: 20px;
+    align-self: center;
+    justify-self: center;
+    mat-icon {
+      position: absolute;
+      font-size: 48px;
+      color: #fff;
+      top: 30%;
+      right: 50%;
+    }
+  }
+  &__create-child-okr {
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.child-okr-description-menu {
+  display: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #6f7782;
+  background-color: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  top: 24px;
+  right: 6px;
+}
+
+.not-data {
+  &__img {
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 24px;
+    @include sm {
+      height: 200px;
+    }
+  }
+  &__content {
+    padding-bottom: 24px;
+  }
+  &__title {
+    font-size: 24px;
+    text-align: center;
+    @include sm {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+  &__text {
+    text-align: center;
+    font-size: 18px;
+    @include sm {
+      font-size: 16px;
+    }
+  }
+  &__action {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+}

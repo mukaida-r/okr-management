@@ -1,0 +1,58 @@
+@import 'variables';
+@import 'mixins';
+
+.login-dialog {
+  padding: 0 30px;
+  @include sm {
+    padding: 0;
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #e8ecee;
+  padding: 24px 0;
+  &__content {
+    align-items: center;
+    margin: 0;
+    font-size: 14px;
+    padding-left: 24px;
+    p {
+      margin: 0;
+    }
+    @include sm {
+      font-size: 16px;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 12px;
+    margin: 0;
+  }
+  &__img {
+    height: 140px;
+  }
+}
+
+.action {
+  padding-top: 24px;
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  &__close {
+    box-shadow: none;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.12);
+    }
+  }
+  &__transition-childOkr {
+    color: #fff;
+    background-color: rgba(2, 5, 211, 0.5);
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

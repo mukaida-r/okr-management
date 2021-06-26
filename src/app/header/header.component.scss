@@ -1,0 +1,76 @@
+@import 'variables';
+@import 'mixins';
+
+.header {
+  background-color: inherit;
+  border-bottom: 1px solid #e8ecee;
+  max-width: 1324px;
+  &__inner {
+    position: fixed;
+    z-index: 1000;
+    height: 72px;
+    justify-content: space-between;
+    left: 50%;
+    transform: translate(-50%, 0);
+    align-items: center;
+    padding: 0 24px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8ecee;
+    @include sm {
+      padding: 0 24px;
+    }
+  }
+  &__logo {
+    margin: 0;
+    height: 26px;
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__right {
+    display: flex;
+  }
+  &__mypage {
+    grid-area: icon;
+    justify-self: end;
+  }
+  &__icon {
+    background-position: center;
+    background-size: cover;
+    box-shadow: none;
+  }
+  &__menu {
+    line-height: 30px !important;
+    height: 36px;
+  }
+  &__settings {
+    @include sm {
+      display: none;
+    }
+  }
+  &__progress {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__nav {
+    list-style: none;
+    a {
+      font-size: 14px;
+      padding: 0 21px;
+      letter-spacing: 1.3px;
+    }
+  }
+  &__login {
+    background-color: rgba(2, 5, 211, 0.5);
+    border-radius: 36px;
+    padding: 6px 24px;
+    &:hover {
+      opacity: 0.9;
+    }
+    @include sm {
+      padding: 3px 12px;
+    }
+  }
+}

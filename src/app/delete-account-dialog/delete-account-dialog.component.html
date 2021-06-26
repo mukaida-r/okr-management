@@ -1,0 +1,26 @@
+<div class="delete-account-dialog">
+  <h2 class="delete-account-dialog__title">退会</h2>
+  <div class="delete-account-dialog__content">
+    <p>
+      退会は永久的なもので、元に戻すことができません。アカウントを退会するとすべてのデータが削除されます。よろしいですか？
+    </p>
+
+    <p>※削除されたデータはもとに戻すことはできません。</p>
+  </div>
+  <div class="delete-account-dialog__action">
+    <button
+      mat-raised-button
+      (click)="closeDeleteAccountDialog()"
+      class="delete-account-dialog__cancel"
+    >
+      キャンセル
+    </button>
+    <button
+      mat-raised-button
+      (click)="deleteAccount()"
+      class="delete-account-dialog__delete-account"
+    >
+      退会する
+    </button>
+  </div>
+</div>
